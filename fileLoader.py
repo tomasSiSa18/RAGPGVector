@@ -1,19 +1,11 @@
 from fastapi import FastAPI, File, UploadFile
 import requests
 
-
 app = FastAPI()
 
-urlFiles = "https://n8n.virtual.uniandes.edu.co/webhook-test/fba4005f-cf21-4bcb-b29d-4234835afbf5"
+urlFiles = "https://n8n.virtual.uniandes.edu.co/webhook/fba4005f-cf21-4bcb-b29d-4234835afbf5"
 
-from fastapi import FastAPI, File, UploadFile
-import requests
-
-app = FastAPI()
-
-urlFiles = "https://n8n.virtual.uniandes.edu.co/webhook-test/fba4005f-cf21-4bcb-b29d-4234835afbf5"
-
-@app.post("/predict/file")
+@app.post("/upload/file")
 async def upload_file(file: UploadFile = File(...)):
     # Read the file content
     contents = await file.read()
