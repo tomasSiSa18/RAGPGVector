@@ -22,3 +22,20 @@ async def upload_file(file: UploadFile = File(...)):
         "response_text": response.text
     }
 
+@app.post("/retrieve/question")
+async def upload_file():
+    # Read the file content
+    contents = await file.read()
+
+    # Send it using requests
+    response = requests.post(
+        url=urlFiles,
+        files={"file": (file.filename, contents, file.content_type)}
+    )
+
+    return {
+        "message": "File sent",
+        "status_code": response.status_code,
+        "response_text": response.text
+    }
+
