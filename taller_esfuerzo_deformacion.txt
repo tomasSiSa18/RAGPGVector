@@ -1,0 +1,71 @@
+
+Taller Esfuerzo-Deformación:
+
+Este es un paso a paso de cómo desarrollar los puntos importantes de los talleres de esta temática
+
+Paso 1
+
+Es necesario sacar los datos de esfuerzo y deformación (únicamente cuando los valores estén en Cargas y Longitudes)
+
+1.1) Determinar si se trata de unidades del Sistema Internacional (SI) o del sistema inglés  
+1.2) Sacar el área de la probeta:
+
+Para probetas circulares:
+A₀ = (π/4) · d₀² [mm²] o [in²]  
+Donde d₀ equivale al diámetro inicial de la probeta  
+
+Para probetas cuadradas:
+A₀ = base × ancho [mm²] o [in²]
+
+1.3) Dividir la carga en el área  
+1.4) Sacar la deformación:  
+ε = (lᵢ - l₀) / l₀ [%]  
+Donde lᵢ corresponde a la longitud instantánea.
+
+Calcule el módulo de Young.
+
+1) Identificar la región lineal (2 o 3 valor de la tabla esfuerzo-deformación) y aplicar la fórmula:  
+E = σ / ε
+
+Calcule el esfuerzo de fluencia al 0.2%.
+
+b.1) Se debe hacer una curva adicional a esta en la cual se desplace la deformación en 0.2%, por ende, se debe crear una nueva columna en Excel, copiar los datos de deformación y sumarles un 0.2%
+
+b.2) Aplicar las ecuaciones de una curva característica lineal (y = mx + b). Donde:  
+m = módulo de Young  
+x = nuevos valores desplazados por 0.2%  
+y = 0 para 0.2%
+
+De esa ecuación se despeja B y luego, con B, ya se tienen los valores de la ecuación de la línea recta para sacar los valores de Y.
+
+El esfuerzo de fluencia es la intersección entre la curva original y luego la línea recta.
+
+Calcule el esfuerzo máximo de tensión ingenieril.
+
+c.1) Identificar el valor máximo de la curva de esfuerzo deformación.
+
+Calcule la ductilidad en área.
+
+d.1) Aplicar la fórmula:  
+%RA = (A₀ - A_f) / A₀
+
+Calcule la ductilidad en elongación.
+
+e.1) Aplicar la fórmula:  
+%EL = (L_f - L₀) / L₀
+
+Calcule el módulo de resiliencia del material.
+
+f.1) Aplicar la fórmula:  
+U_r = (1/2) · σ_y · ε_y  
+Donde:  
+σ_y viene del esfuerzo de fluencia (valor del eje Y de la intersección de la línea de la pendiente con la curva original)  
+ε_y viene de la elasticidad (valor del eje X de la intersección de la línea de la pendiente con la curva original)
+
+Calcule la tenacidad del material.
+
+g.1) Calcular el área bajo la curva completa (Método de integrales, por ejemplo)
+
+Calcule el esfuerzo de fractura del material.
+
+h.1) Identificar el último valor en la columna de esfuerzo de la tabla.
