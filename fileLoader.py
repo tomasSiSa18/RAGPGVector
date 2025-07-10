@@ -25,7 +25,7 @@ async def upload_file(file: UploadFile = File(...)):
         "response_text": response.text
     }
     
-@app.post("/upload/file")
+@app.post("/upload/files")
 async def upload_files(files: List[UploadFile] = File(...)):
     responses = []
     
