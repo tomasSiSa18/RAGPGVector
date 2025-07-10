@@ -1,3 +1,4 @@
+from typing import List
 from fastapi import Body, FastAPI, File, UploadFile
 import requests
 
@@ -23,7 +24,27 @@ async def upload_file(file: UploadFile = File(...)):
         "status_code": response.status_code,
         "response_text": response.text
     }
+    
+@app.post("/upload/file")
+async def upload_files(files: List[UploadFile] = File(...)):
+    responses = []
+    
+    for file in files:
+    
+        # Read the file content
+        contents = await file.read()
 
+        # Send it using requests
+        response = requests.post(
+            url=urlFiles,
+            files={"file": (file.filename, contents, file.content_type)}
+        )
+
+        responses.append(response)
+        
+    return {
+        "message": f"{len(responses)} files sent"
+    }
 @app.post("/retrieve/question")
 def receive_string(data: str = Body(..., embed=True)):
 
